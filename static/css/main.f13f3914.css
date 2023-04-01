@@ -1,0 +1,2 @@
+.App,.information{display:flex;flex-direction:column;justify-content:center}.information{align-items:center;width:100%}input{font-size:20px;height:50px;margin:5px;padding-left:10px;width:300px}button{height:50px;margin-top:15px;width:320px}button:hover{cursor:pointer}.employees{align-items:center;display:flex;flex-direction:column;width:100%}.employee{border:1px solid #000;display:flex;font-family:Courier New,Courier,monospace;height:auto;margin:10px;padding:10px;width:700px}.employee h3{margin:20px}
+/*# sourceMappingURL=main.f13f3914.css.map*/

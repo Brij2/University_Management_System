@@ -17,13 +17,13 @@ const ClassroomForm = () => {
   const [action, setAction] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/classroom").then((response) => {
+    Axios.get("https://ums-gblx.onrender.com/classroom").then((response) => {
       setClassroomList(response.data);
     });
   }, [])
 
   const addClassroom = () => {
-    Axios.post("http://localhost:3001/create/classroom", {
+    Axios.post("https://ums-gblx.onrender.com/create/classroom", {
       building: building,
       room_no: roomno,
       capacity: capacity
@@ -49,7 +49,7 @@ const ClassroomForm = () => {
   }
 
   const updateClassroom = () => {
-    Axios.put(`http://localhost:3001/update/classroom/${pk}`, {building: upBuilding,
+    Axios.put(`https://ums-gblx.onrender.com/update/classroom/${pk}`, {building: upBuilding,
     room_number: upRoomno,
     capacity: upCapacity})
     .then((res) => {
@@ -68,7 +68,7 @@ const ClassroomForm = () => {
   }
 
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/classroom/${id}`).then((res) => {
+    Axios.delete(`https://ums-gblx.onrender.com/delete/classroom/${id}`).then((res) => {
       setClassroomList(
         classroomList.filter((val) => {
           return val.room_number !== id;

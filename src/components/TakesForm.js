@@ -23,13 +23,13 @@ const TakesForm = () => {
   const [action, setAction] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/takes").then((response) => {
+    Axios.get("https://ums-gblx.onrender.com/takes").then((response) => {
       setTakesList(response.data);
     });
   }, [])
 
   const addTakes = () => {
-    Axios.post("http://localhost:3001/create/takes", {
+    Axios.post("https://ums-gblx.onrender.com/create/takes", {
       id: studentId,
       course_id: courseId,
       sec_id: secId,
@@ -64,7 +64,7 @@ const TakesForm = () => {
   }
 
   const updateTakes = () => {
-    Axios.put(`http://localhost:3001/update/takes/${pk}`,
+    Axios.put(`https://ums-gblx.onrender.com/update/takes/${pk}`,
       {
         id: upStudentId,
         course_id: upCourseId,
@@ -92,7 +92,7 @@ const TakesForm = () => {
   }
 
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/takes/${id}`).then((res) => {
+    Axios.delete(`https://ums-gblx.onrender.com/delete/takes/${id}`).then((res) => {
       setTakesList(
         takesList.filter((val) => {
           return val.id !== id;

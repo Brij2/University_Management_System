@@ -17,13 +17,13 @@ const InstructorForm = () => {
   const [action, setAction] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/instructor").then((response) => {
+    Axios.get("https://ums-gblx.onrender.com/instructor").then((response) => {
       setInstructorList(response.data);
     });
   }, [])
 
   const addInstructor = () => {
-    Axios.post("http://localhost:3001/create/instructor", {
+    Axios.post("https://ums-gblx.onrender.com/create/instructor", {
       name: name,
       dept_name: deptName,
       salary: salary
@@ -49,7 +49,7 @@ const InstructorForm = () => {
   }
 
   const updateInstructor = () => {
-    Axios.put(`http://localhost:3001/update/instructor/${pk}`,
+    Axios.put(`https://ums-gblx.onrender.com/update/instructor/${pk}`,
       {
         dept_name: upDeptName,
         name: upName,
@@ -71,7 +71,7 @@ const InstructorForm = () => {
   }
 
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/instructor/${id}`).then((res) => {
+    Axios.delete(`https://ums-gblx.onrender.com/delete/instructor/${id}`).then((res) => {
       setInstructorList(
         instructorList.filter((val) => {
           return val.id !== id;

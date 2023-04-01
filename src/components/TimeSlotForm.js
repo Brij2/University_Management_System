@@ -19,13 +19,13 @@ const TimeSlotForm = () => {
   const [action, setAction] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/timeslot").then((response) => {
+    Axios.get("https://ums-gblx.onrender.com/timeslot").then((response) => {
       setTimeSlotList(response.data);
     });
   }, [])
 
   const addTimeSlot = () => {
-    Axios.post("http://localhost:3001/create/timeslot", {
+    Axios.post("https://ums-gblx.onrender.com/create/timeslot", {
       time_slot_id: timeSlotId,
       day: day,
       start_time: startTime,
@@ -54,7 +54,7 @@ const TimeSlotForm = () => {
   }
 
   const updateTimeSlot = () => {
-    Axios.put(`http://localhost:3001/update/timeslot/${pk}`,
+    Axios.put(`https://ums-gblx.onrender.com/update/timeslot/${pk}`,
       {
         time_slot_id: upTimeSlotId,
         day: upDay,
@@ -78,7 +78,7 @@ const TimeSlotForm = () => {
   }
 
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/timeslot/${id}`).then((res) => {
+    Axios.delete(`https://ums-gblx.onrender.com/delete/timeslot/${id}`).then((res) => {
       setTimeSlotList(
         timeSlotList.filter((val) => {
           return val.time_slot_id !== id;

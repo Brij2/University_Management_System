@@ -15,13 +15,13 @@ const AdvisorForm = () => {
   const [action, setAction] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/advisor").then((response) => {
+    Axios.get("https://ums-gblx.onrender.com/advisor").then((response) => {
       setAdvisorList(response.data);
     });
   }, [])
 
   const addAdvisor = () => {
-    Axios.post("http://localhost:3001/create/advisor", {
+    Axios.post("https://ums-gblx.onrender.com/create/advisor", {
       s_id: sId,
       i_id: iId
     }).then(() => {
@@ -44,7 +44,7 @@ const AdvisorForm = () => {
   }
 
   const updateAdvisor = () => {
-    Axios.put(`http://localhost:3001/update/advisor/${pk}`,
+    Axios.put(`https://ums-gblx.onrender.com/update/advisor/${pk}`,
       {
         s_id: upSId,
         i_id: upIId
@@ -64,7 +64,7 @@ const AdvisorForm = () => {
   }
 
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/advisor/${id}`).then((res) => {
+    Axios.delete(`https://ums-gblx.onrender.com/delete/advisor/${id}`).then((res) => {
       setAdvisorList(
         advisorList.filter((val) => {
           return val.s_id !== id;

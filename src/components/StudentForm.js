@@ -18,10 +18,10 @@ const StudentForm = () => {
   const [Error, setError] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/student").then((response, err) => {
+    Axios.get("https://ums-gblx.onrender.com/student").then((response, err) => {
 
     if(response.status == 200){
-      console.log("*****************")
+      // console.log("*****************")
       setStudentList(response.data);
     }
     else {
@@ -34,7 +34,7 @@ const StudentForm = () => {
   }, [])
 
   const addStudent = () => {
-    Axios.post("http://localhost:3001/create/student", {
+    Axios.post("https://ums-gblx.onrender.com/create/student", {
       name: name,
       dept_name: deptName,
       tot_cred: totCred
@@ -60,7 +60,7 @@ const StudentForm = () => {
   }
 
   const updateStudent = () => {
-    Axios.put(`http://localhost:3001/update/student/${pk}`,
+    Axios.put(`https://ums-gblx.onrender.com/update/student/${pk}`,
       {
         name: upName,
         dept_name: upDeptName,
@@ -82,7 +82,7 @@ const StudentForm = () => {
   }
 
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/student/${id}`).then((res) => {
+    Axios.delete(`https://ums-gblx.onrender.com/delete/student/${id}`).then((res) => {
       setStudentList(
         studentList.filter((val) => {
           return val.id !== id;

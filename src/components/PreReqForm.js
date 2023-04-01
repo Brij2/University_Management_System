@@ -15,13 +15,13 @@ const PreReqForm = () => {
   const [action, setAction] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/prereq").then((response) => {
+    Axios.get("https://ums-gblx.onrender.com/prereq").then((response) => {
       setPrereqList(response.data);
     });
   }, [])
 
   const addPrereq = () => {
-    Axios.post("http://localhost:3001/create/prereq", {
+    Axios.post("https://ums-gblx.onrender.com/create/prereq", {
       course_id: courseId,
       prereq_id: prereqId
     }).then(() => {
@@ -44,7 +44,7 @@ const PreReqForm = () => {
   }
 
   const updatePrereq = () => {
-    Axios.put(`http://localhost:3001/update/prereq/${pk}`,
+    Axios.put(`https://ums-gblx.onrender.com/update/prereq/${pk}`,
       {
         course_id: upCourseId,
         prereq_id: upPrereqId
@@ -64,7 +64,7 @@ const PreReqForm = () => {
   }
 
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/prereq/${id}`).then((res) => {
+    Axios.delete(`https://ums-gblx.onrender.com/delete/prereq/${id}`).then((res) => {
       setPrereqList(
         prereqList.filter((val) => {
           return val.course_id !== id;

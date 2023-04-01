@@ -25,13 +25,13 @@ const SectionForm = () => {
   const [action, setAction] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/section").then((response) => {
+    Axios.get("https://ums-gblx.onrender.com/section").then((response) => {
       setSectionList(response.data);
     });
   }, [])
 
   const addSection = () => {
-    Axios.post("http://localhost:3001/create/section", {
+    Axios.post("https://ums-gblx.onrender.com/create/section", {
       course_id: courseId,
       sec_id: secId,
       semester: semester,
@@ -69,7 +69,7 @@ const SectionForm = () => {
   }
 
   const updateSection = () => {
-    Axios.put(`http://localhost:3001/update/section/${pk}`,
+    Axios.put(`https://ums-gblx.onrender.com/update/section/${pk}`,
       {
         course_id: upCourseId,
         sec_id: upSecId,
@@ -99,7 +99,7 @@ const SectionForm = () => {
   }
 
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/section/${id}`).then((res) => {
+    Axios.delete(`https://ums-gblx.onrender.com/delete/section/${id}`).then((res) => {
       setSectionList(
         sectionList.filter((val) => {
           return val.sec_id !== id;

@@ -18,7 +18,7 @@ const DepartmentForm = () => {
   const [Error, setError] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/department").then((response, err) => {
+    Axios.get("https://ums-gblx.onrender.com/department").then((response, err) => {
       if(response.status == 200){
         // console.log("*****************")
         setDeptList(response.data);
@@ -32,7 +32,7 @@ const DepartmentForm = () => {
   }, [])
 
   const addDept = () => {
-    Axios.post("http://localhost:3001/create/department", {
+    Axios.post("https://ums-gblx.onrender.com/create/department", {
       dept_name: deptName,
       building: building,
       budget: budget
@@ -58,7 +58,7 @@ const DepartmentForm = () => {
   }
 
   const updateDept = () => {
-    Axios.put(`http://localhost:3001/update/department/${pk}`,
+    Axios.put(`https://ums-gblx.onrender.com/update/department/${pk}`,
       {
         dept_name: upDeptName,
         building: upBuilding,
@@ -80,7 +80,7 @@ const DepartmentForm = () => {
   }
 
   const deleteItem = (id) => {
-    Axios.delete(`http://localhost:3001/delete/department/${id}`).then((res) => {
+    Axios.delete(`https://ums-gblx.onrender.com/delete/department/${id}`).then((res) => {
       setDeptList(
         DeptList.filter((val) => {
           return val.dept_name !== id;

@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom'
 const Navbar = () => {
   let location = useLocation()
     const handleClick = async ()  =>{
-      await  axios.get('http://localhost:3001/config').then(()=>{
+      await  axios.get('https://ums-gblx.onrender.com/config').then(()=>{
             alert("Queries executed! ")
         }).catch(err=>{
             console.log(err)
